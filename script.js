@@ -2,20 +2,25 @@ const container = document.querySelector(".container")
 
 for(let i=0; i<256; i++){
     const div = document.createElement('div')
-    div.textContent = 'a'
     div.classList.add('pixel')
+    
+    div.addEventListener('mouseover', () => {
+        div.classList.add('black')
+    })
+
     container.appendChild(div)
 }
 
 const pixels = document.querySelectorAll('.pixel')
 
-pixels.forEach((pixel) => {
-    pixel.addEventListener('mouseover', () => {
-        pixel.classList.add('black')
-    })
-})
+// pixels.forEach((pixel) => {
+//     pixel.addEventListener('mouseover', () => {
+//         pixel.classList.add('black')
+//     })
+// })
 
 const resetbtn = document.querySelector('.resetbtn')
+
 resetbtn.addEventListener('click', () => {
     pixels.forEach((pixel) => {
         pixel.classList.remove('black')
@@ -24,8 +29,12 @@ resetbtn.addEventListener('click', () => {
     container.innerHTML = ''
     for(let i=0; i<size*size; i++){
         const div = document.createElement('div')
-        div.textContent = 'a'
         div.classList.add('pixel')
+
+        div.addEventListener('mouseover', () => {
+            div.classList.add('black')
+        })    
+
         container.appendChild(div)
     }
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`

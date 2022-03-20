@@ -9,3 +9,8 @@
 .black {
     background-color: black;
 }
+
+.pixel {
+    border: 1px solid;
+    border-color: black;
+}
